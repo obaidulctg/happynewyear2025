@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy New Year 2024</title>
+    <title>Happy New Year 2025</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-        body {
+      body {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -44,14 +44,14 @@ img {
     display: none; /* Hide scrollbar until scrolling begins */
   }
 }
-
         body {
             margin: 0;
             padding: 0;
             overflow: hidden;
             font-family: 'Arial', sans-serif;
             background-color: #1e1e2f;
-            color: white;  /* Added semicolon here */
+            color: white;
+            user-select: none;
         }
 
         canvas {
@@ -68,38 +68,28 @@ img {
             z-index: 1;
             text-align: center;
             color: white;
+            padding: 2rem;
         }
 
         h1 {
-            font-size: 3.5rem;
+            font-size: 5vw; /* Scalable font size */
             margin-top: 10vh;
             animation: fadeIn 2s ease-in-out;
         }
 
         h2 {
-            font-size: 1.5rem;
+            font-size: 2vw; /* Scalable font size */
             margin-top: 1rem;
             animation: fadeIn 3s ease-in-out;
         }
 
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
         button {
             background: linear-gradient(45deg, #a2d2ff, #bde0fe, #ffafcc, #ffc8dd, #cdb4db);
-            width: 150px;
-            height: 60px;
+            width: 200px;
+            height: 50px;
             border-radius: 20px;
             justify-content: center;
             border: none;
-            z-index: -1;
         }
 
         button:hover {
@@ -120,7 +110,7 @@ img {
 
         .footer {
             position: absolute;
-            bottom: 20px;
+            bottom: 10px;
             width: 100%;
             text-align: center;
             z-index: 1;
@@ -129,7 +119,7 @@ img {
         .footer a {
             color: white;
             margin: 0 10px;
-            font-size: 2.5rem;
+            font-size: 2rem;
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -138,13 +128,14 @@ img {
             color: #0bcc95;
         }
 
-
         img {
-            height: 200px;
-            width: 200px;
-            border-radius: 0px 30px 0px 30px;
+            height: auto;
+            width: 100%;
+            max-width: 200px;
+            border-radius: 0 30px 0 30px;
             margin-top: 20px;
         }
+
         img:hover {
             border-radius: 30px 0px 30px 0px;
             animation: animate 5s ease-in-out;
@@ -173,34 +164,72 @@ img {
                 rotate: 360deg;
             }
         }
+
         .gradient-text {
-            font-size: 4rem;
+            font-size: 4vw; /* Scalable text size */
             font-weight: bold;
             background: linear-gradient(45deg, #ff3838, #ff9f1a, #32ff7e, #7efff5, #18dcff, #7d5fff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .gradient-text:hover {
-            background: linear-gradient(45deg, #2af598, #009efd);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+
         .gradient {
             font-size: 2rem;
             font-weight: bold;
-            background: linear-gradient(90deg,#a2d2ff,#bde0fe,#ffafcc,#ffc8dd,#cdb4db );
+            background: linear-gradient(90deg, #a2d2ff, #bde0fe, #ffafcc, #ffc8dd, #cdb4db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2:hover {
+            background: linear-gradient(45deg, #8770eb, hotpink, #ff3838, #ff9f1a, #32ff7e, #7efff5, #18dcff, #7d5fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        span:hover {
+            background: linear-gradient(45deg, hotpink, #ff3838, #ff9f1a, #32ff7e, #7efff5, #18dcff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        a:hover {
+            background: linear-gradient(45deg, #8770eb, hotpink, #ff3838, #ff9f1a, #32ff7e, #7efff5, #18dcff, #7d5fff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .gradient:hover {
-            background: linear-gradient(90deg,#ffd60a,#98f77e,#db18fd,wheat,#ffc300);
+            background: linear-gradient(45deg, #8770eb, hotpink, #ff3838, #ff9f1a, #32ff7e, #7efff5, #18dcff, #7d5fff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        h2:hover {
-            background: linear-gradient(45deg,#8770eb,hotpink,#ff3838,#ff9f1a,#32ff7e,#7efff5,#18dcff,#7d5fff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 6vw;
+            }
+
+            h2 {
+                font-size: 4vw;
+            }
+
+            button {
+                width: 150px;
+                height: 40px;
+            }
+
+            .footer a {
+                font-size: 1.5rem;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -213,15 +242,16 @@ img {
             &#x1F389; <br>
             <span class="gradient-text"> Happy New Year 2025 </span>!
         </h1>
-        <h2>Greetings from</h2> <div class="gradient">Mohammed Obaidul Hoque</div>
-        <button><a href="mailto:mohammedobaidulhoquectg@gmail.com">Get custom</a></button> <br>
-        <img src="bg.jpeg" alt="Background Image">
+        <h2>Greetings from</h2>
+        <div class="gradient">Mohammed Obaidul Hoque</div>
+        <button><a href="mailto:mohammedobaidulhoquectg@gmail.com">Get Custom</a></button> <br>
+        <img src="bg.jpeg" alt="Celebration Image" loading="lazy">
     </div>
 
     <div class="footer">
-        <a href="https://facebook.com/obaidulhoquectg" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://instagram.com/obaidulhoquectg" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://x.com/obaidulhoquectg" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://facebook.com/obaidulhoquectg" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://instagram.com/obaidulhoquectg" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/obaidulhoquectg" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
     </div>
 
     <script>
@@ -249,7 +279,7 @@ img {
                 this.opacity = Math.max(this.life, 0);
                 this.x += Math.cos(this.angle) * this.speed;
                 this.y += Math.sin(this.angle) * this.speed;
-                this.size *= 0.98; // Gradual shrink
+                this.size *= 0.98;
             }
 
             draw() {
@@ -303,8 +333,8 @@ img {
             canvas.height = window.innerHeight;
         });
 
-        /*addings*/
-        document.addEventListener('keydown', function(event) {
+          /*addings*/
+          document.addEventListener('keydown', function(event) {
     if ((event.ctrlKey || event.metaKey) && (event.key === 'c' || event.key === 'x' || event.key === 'v' ||event.key === 's')) {
       event.preventDefault();
     }
@@ -349,10 +379,7 @@ img {
       event.preventDefault();
     }
    });
-
-    // Function to animate the BG//
-    
-    </script>
+</script>
 </body>
 
 </html>
